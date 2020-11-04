@@ -1,10 +1,16 @@
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 export default makeStyles({
+    div__root: {
+        width: '100%',
+        height: '100vh',
+        overflow: 'auto',
+        backgroundColor: 'black',
+    },
     div__header: {
         display: 'flex',
         width: '100%',
-        backgroundColor: 'black',
+        marginBottom: '30px',
     },
     div__menuOp: {
         width: '100%',
@@ -22,8 +28,17 @@ export default makeStyles({
             cursor: 'pointer',
             transition: 'color 0.2s ease-in-out'
         },
-        '& li:hover':{
+        '& li:hover': {
             color: 'orange',
         },
+    },
+    div__content: {
+        width: '100%',
+        height: '100%',
+    },
+    div__produtos: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
     },
 })

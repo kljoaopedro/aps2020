@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0a52b2e-1092-4f62-9d52-b145323b1551" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/home.styles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Login/login.styles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Loading/UILoading.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Loading/UILoading.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hoc/PrivateRoute.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/RouteSettings.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/api.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/auth/auth.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/AuthProvider.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/auth.constants.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/auth.saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/auth.store.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/home/home.saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/home/home.store.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Produtos/Card/CardProdutos.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Produtos/Card/cardProdutos.styles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Produtos/Produtos.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Produtos/produtos.styles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/home/home.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/home/home.constants.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/home.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/home.styles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/home/home.saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/home/home.saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/home/home.store.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/home/home.store.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,34 +79,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603903164462</updated>
-      <workItem from="1603903168223" duration="23977000" />
+      <workItem from="1603903168223" duration="37765000" />
     </task>
+    <task id="LOCAL-00001" summary="ferreira gay">
+      <created>1604281671328</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604281671328</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ferreira gay">
+      <created>1604281831594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604281831594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ferreira gay" />
+    <option name="LAST_COMMIT_MESSAGE" value="ferreira gay" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603926481372">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603926481372" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604281793816">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604281830624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604281793816" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604281830624" />
     <state x="551" y="258" key="Github.ShareDialog" timestamp="1604281777958">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="551" y="258" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1604281777958" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1604277910328">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604452000658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604277910328" />
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604281799569">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604452000658" />
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604281832870">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604281799569" />
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604281832870" />
     <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1604079227770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -133,10 +134,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604280372441" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604279762429">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604442938944">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604279762429" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604442938944" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
