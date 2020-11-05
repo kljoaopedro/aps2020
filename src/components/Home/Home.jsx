@@ -1,20 +1,29 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './home.styles'
 import {useDispatch, useSelector} from "react-redux";
 import {withRouter} from "react-router";
 import Icon from "@material-ui/core/Icon";
 import Produtos from "../Produtos/Produtos";
-import {getAllCategoriasAction, getAllProdutosAction, getProdutoByCategoriaIdAction} from "../../store/home/home.saga";
+import {
+    getAllCategoriasAction,
+    getAllProdutosAction,
+    getCarrinhoByClienteIdAction,
+    getProdutoByCategoriaIdAction
+} from "../../store/home/home.saga";
 import UILoading from "../UI/Loading/UILoading";
+import Carrinho from "../Carrinho/Carrinho";
 
 
 function Home() {
     const styles = useStyles();
     const dispatch = useDispatch();
-    const clienteLogado = useSelector(states => states.authStore.clienteLogado);
+
+
     const homeLoading = useSelector(states => states.homeStore.homeLoading);
     const categorias = useSelector(states => states.homeStore.categorias);
+
+    const [carrinhoOpen, setCarrinhoOpen] = useState(false);
 
 
     const getAllProdutos = useCallback(() => {
@@ -30,11 +39,20 @@ function Home() {
     const onClickMenuOpHandler = useCallback((event, idCategoria) => {
         if (idCategoria) {
             dispatch(getProdutoByCategoriaIdAction(idCategoria))
-        } else{
+        } else {
             getAllProdutos();
         }
 
     }, [dispatch, getAllProdutos]);
+
+    const onClickCarrinhoHandler = useCallback(() => {
+        dispatch(getCarrinhoByClienteIdAction());
+        setCarrinhoOpen(true);
+    }, [dispatch, setCarrinhoOpen]);
+
+    const onMouseLeaveCarrinhoHandler = useCallback(() => {
+        setCarrinhoOpen(false);
+    }, [setCarrinhoOpen]);
 
 
     return (
@@ -59,16 +77,15 @@ function Home() {
                                 </li>
                             ))
                         )}
-                        {/*<li onClick={onClickMenuOpHandler}>Item 1</li>*/}
-                        {/*<li>Item 2</li>*/}
-                        {/*<li>Item 3</li>*/}
-                        {/*<li>Item 4</li>*/}
-                        {/*<li>Item 5</li>*/}
-                        {/*<li>Item 6.</li>*/}
                         <li>
-                            <Icon>
+                            <Icon onClick={onClickCarrinhoHandler}>
                                 <ShoppingCartIcon/>
                             </Icon>
+                            <Carrinho
+                                loading={homeLoading}
+                                open={carrinhoOpen}
+                                onMouseLeave={onMouseLeaveCarrinhoHandler}
+                            />
                         </li>
                     </ul>
                     <div>

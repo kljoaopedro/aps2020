@@ -5,6 +5,7 @@ function buildInitialStates() {
         homeLoading: false,
         produtos: [],
         categorias: [],
+        carrinho: [],
     }
 }
 

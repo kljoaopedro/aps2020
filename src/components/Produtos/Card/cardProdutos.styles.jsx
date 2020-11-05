@@ -48,4 +48,10 @@ export default makeStyles({
             textAlign: 'center',
         }
     },
+    div__qtdidade: {
+        textAlign: 'center',
+        backgroundColor: 'black',
+        color: 'white',
+        paddingBottom: '8px',
+    },
 });

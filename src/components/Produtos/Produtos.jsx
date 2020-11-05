@@ -8,7 +8,7 @@ function Produtos() {
     const produtos = useSelector(states => states.homeStore.produtos);
     return (
         <>
-            {produtos[0] !== undefined ?
+            {produtos !== undefined ?
                 produtos.map(produto => (
                     <CardProdutos
                         key={produto.idProduto}
