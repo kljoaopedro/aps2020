@@ -25,6 +25,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jVxfeeTnHZMRDfIBDmUuPbEkmr" />
@@ -146,10 +151,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603926481372" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604784338745">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604790292781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604784338745" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604790292781" />
     <state x="551" y="258" key="Github.ShareDialog" timestamp="1604281777958">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -158,10 +163,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604789229549" />
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604784341730">
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604790467071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604784341730" />
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604790467071" />
     <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1604790278394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
