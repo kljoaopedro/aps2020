@@ -3,9 +3,10 @@ import {
     API_GET_ALL_CATEGORIAS,
     API_GET_ALL_PRODUTOS,
     API_GET_ITENS_CARRINHO,
+    API_GET_PEDIDOS,
     API_GET_PRODUTO_BY_CATEGORIA_ID,
     API_POST_ADD_ITEM_CARRINHO,
-    API_POST_CARRINHO
+    API_POST_PEDIDO
 } from "./home.constants";
 import {call, put} from 'redux-saga/effects';
 import {
@@ -14,11 +15,12 @@ import {
     getAllCategorias,
     getAllProdutos,
     getCarrinhoByIdCliente,
+    getPedidos,
     getProdutoByCategoriaId,
     postCarrinho
 } from "../../service/home/home.service";
 import {select, takeLatest} from "@redux-saga/core/effects";
-import {setHomeValuesAction} from "./home.store";
+import {setHomeValuesAction, setPedidoGeradoAction} from "./home.store";
 
 
 export const getAllProdutosAction = () => ({
@@ -49,8 +51,12 @@ export const deleteItemCarrinhoAction = (idCarrinho) => ({
     idCarrinho,
 });
 
-export const postCarrinhoAction = () => ({
-    type: API_POST_CARRINHO,
+export const postPedidoAction = () => ({
+    type: API_POST_PEDIDO,
+});
+
+export const getPedidosAction = () => ({
+    type: API_GET_PEDIDOS,
 });
 
 
@@ -104,7 +110,6 @@ function* addItemCarrinhoHandler(actions) {
     try {
         const idCliente = yield select(states => states.authStore.clienteLogado.idCliente);
         const {idProduto, quantidade} = actions;
-        console.log(idCliente);
 
         const carrinhoPayload = yield buildCarrinhoPayload(idProduto, quantidade, idCliente);
         yield call(addItemCarrinho, carrinhoPayload);
@@ -151,14 +156,30 @@ function* deleteItemCarrinhoHandler(actions) {
     }
 }
 
-function* postCarrinhoHandler() {
+function* postPedidoHandler() {
     yield put(setHomeValuesAction('homeLoading', true));
     try {
         const idCliente = yield select(states => states.authStore.clienteLogado.idCliente);
-        yield call(postCarrinho, idCliente);
+        const {data} = yield call(postCarrinho, idCliente);
 
+        yield put(setPedidoGeradoAction(data.idPedido, data.valorTotal));
         yield put(setHomeValuesAction('openGerarPedidoDialog', false));
         yield put(setHomeValuesAction('openAvisoPedidoDialog', true));
+    } catch (exception) {
+        //Nenhum tratamento definido...
+    } finally {
+        yield put(setHomeValuesAction('homeLoading', false));
+    }
+}
+
+function* getPedidosHandler() {
+    yield put(setHomeValuesAction('homeLoading', true));
+    try {
+        const idCliente = yield select(states => states.authStore.clienteLogado.idCliente);
+        const {data} = yield call(getPedidos, idCliente);
+
+        yield put(setHomeValuesAction('pedidoJaRealizado', data));
+        yield put(setHomeValuesAction('openListarPedidoDialog', true));
     } catch (exception) {
         //Nenhum tratamento definido...
     } finally {
@@ -173,5 +194,6 @@ export default function* watchHome() {
     yield takeLatest(API_POST_ADD_ITEM_CARRINHO, addItemCarrinhoHandler);
     yield takeLatest(API_GET_ITENS_CARRINHO, getItensCarrinhoHandler);
     yield takeLatest(API_DELETE_ITEM_CARRINHO, deleteItemCarrinhoHandler);
-    yield takeLatest(API_POST_CARRINHO, postCarrinhoHandler);
+    yield takeLatest(API_POST_PEDIDO, postPedidoHandler);
+    yield takeLatest(API_GET_PEDIDOS, getPedidosHandler);
 };

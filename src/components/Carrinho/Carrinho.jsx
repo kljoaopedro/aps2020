@@ -3,10 +3,11 @@ import useStyles from './carrinho.styles';
 import clsx from "clsx";
 import {useDispatch, useSelector} from "react-redux";
 import DeleteIcon from '@material-ui/icons/Delete';
-import {deleteItemCarrinhoAction, postCarrinhoAction} from "../../store/home/home.saga";
+import {deleteItemCarrinhoAction, postPedidoAction} from "../../store/home/home.saga";
 import PedidoDialog from "../UI/Dialog/PedidoDialog";
 import {getItemValue, getTotalCarrinho} from "./carrinhoUtils";
 import {setHomeValuesAction} from "../../store/home/home.store";
+import AvisoPedidoDialog from "../UI/Dialog/AvisoPedidoDialog";
 
 function Carrinho({open, loading, onMouseLeave}) {
 
@@ -16,6 +17,7 @@ function Carrinho({open, loading, onMouseLeave}) {
     const carrinho = useSelector(states => states.homeStore.carrinho);
     const openGerarPedidoDialog = useSelector(states => states.homeStore.openGerarPedidoDialog);
     const openAvisoPedidoDialog = useSelector(states => states.homeStore.openAvisoPedidoDialog);
+    const pedidoGerado = useSelector(states => states.homeStore.pedidoGerado);
 
     const [carrinhoPedido, setCarrinhoPedido] = useState([]);
 
@@ -39,7 +41,11 @@ function Carrinho({open, loading, onMouseLeave}) {
     }, [dispatch, setCarrinhoPedido]);
 
     const onGerarPedidoHandler = useCallback(() => {
-        dispatch(postCarrinhoAction());
+        dispatch(postPedidoAction());
+    }, [dispatch]);
+
+    const onCloseAvisoPedidoHandler = useCallback(() => {
+        dispatch(setHomeValuesAction('openAvisoPedidoDialog', false));
     }, [dispatch]);
 
     return (
@@ -49,6 +55,12 @@ function Carrinho({open, loading, onMouseLeave}) {
                 onGerarPedidoHandler={onGerarPedidoHandler}
                 onCloseHandler={onClosePedidoHandler}
                 carrinho={carrinhoPedido}
+            />
+            <AvisoPedidoDialog
+                idPedido={pedidoGerado.idPedido}
+                valorTotal={pedidoGerado.valorTotal}
+                open={openAvisoPedidoDialog}
+                onCloseHandler={onCloseAvisoPedidoHandler}
             />
             {carrinho !== undefined ?
                 (

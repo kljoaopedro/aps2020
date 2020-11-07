@@ -17,11 +17,9 @@ function* logarHandler(actions) {
         const {username, senha} = actions.data;
 
         const {data} = yield call(logarCliente, username, senha);
-        console.log(data);
         yield put(setDadosClienteLogadoAction(data));
         yield replaceTo(actions.history, '/home');
     } catch (exception) {
-        console.log(exception);
         yield put(setAuthValuesAction('errorMessage', getErrorMessage(exception)));
     } finally {
         yield put(setAuthValuesAction('authLoading', false));

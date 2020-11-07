@@ -5,29 +5,11 @@ export default makeStyles({
     '& .MuiDialog-paperWidthSm': {
       width: '50rem',
       maxWidth: '62.5rem',
+      background: 'linear-gradient(#181818, black)',
+      border: '1px solid white',
     },
     '& .MuiDialogContent-root:first-child': {
       padding: '2.1875rem 5.75rem 2.1875rem 5.75rem',
-    },
-  },
-  dialog__textContainer: {
-    textAlign: 'center',
-    color: '#14213d',
-    '& h2': {
-      fontSize: '1.875rem',
-      fontWeight: 'bold',
-    },
-    '& p': {
-      fontSize: '1.375rem',
-    },
-    '@media screen and (max-width: 600px)': {
-      '& h2': {
-        fontSize: '1rem',
-      },
-      '& p': {
-        fontSize: '0.875rem',
-      },
-      padding: '0 2.1875rem',
     },
   },
   dialog__icon: {
@@ -36,8 +18,7 @@ export default makeStyles({
     maxHeight: '6.25rem',
     justifyContent: 'center',
     paddingTop: '2.1875rem',
-  },
-  dialog__icon__sucess: {
+    paddingBottom: '2.1875rem',
     '& .MuiSvgIcon-root': {
       fontSize: '5.5rem',
       color: 'green',
@@ -45,18 +26,5 @@ export default makeStyles({
         fontSize: '3rem',
       },
     },
-  },
-  dialog__icon__error: {
-    '& .MuiSvgIcon-root': {
-      fontSize: '5.5rem',
-      color: '#fca311',
-      '@media screen and (max-width: 600px)': {
-        fontSize: '3rem',
-      },
-    },
-  },
-  dialog__actions: {
-    justifyContent: 'center',
-    padding: '2.1875rem 0',
   },
 });

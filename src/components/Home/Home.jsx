@@ -9,10 +9,14 @@ import {
     getAllCategoriasAction,
     getAllProdutosAction,
     getCarrinhoByClienteIdAction,
+    getPedidosAction,
     getProdutoByCategoriaIdAction
 } from "../../store/home/home.saga";
 import UILoading from "../UI/Loading/UILoading";
 import Carrinho from "../Carrinho/Carrinho";
+import PedidoDialog from "../UI/Dialog/PedidoDialog";
+import {setHomeValuesAction} from "../../store/home/home.store";
+import ListaPedidoDialog from "../UI/Dialog/ListaPedidoDialog";
 
 
 function Home() {
@@ -22,6 +26,7 @@ function Home() {
 
     const homeLoading = useSelector(states => states.homeStore.homeLoading);
     const categorias = useSelector(states => states.homeStore.categorias);
+    const openListarPedidoDialog = useSelector(states => states.homeStore.openListarPedidoDialog);
 
     const [carrinhoOpen, setCarrinhoOpen] = useState(false);
 
@@ -45,6 +50,10 @@ function Home() {
 
     }, [dispatch, getAllProdutos]);
 
+    const onClickPedidosHandler = useCallback(() => {
+        dispatch(getPedidosAction());
+    }, [dispatch]);
+
     const onClickCarrinhoHandler = useCallback(() => {
         dispatch(getCarrinhoByClienteIdAction());
         setCarrinhoOpen(true);
@@ -58,9 +67,17 @@ function Home() {
     return (
         <div className={styles.div__root}>
             <UILoading show={homeLoading}/>
+            <ListaPedidoDialog
+                open={openListarPedidoDialog}
+                onCloseHandler={() => dispatch(setHomeValuesAction('openListarPedidoDialog', false))}/>
             <div className={styles.div__header}>
                 <div className={styles.div__menuOp}>
                     <ul>
+                        <li
+                            onClick={onClickPedidosHandler}
+                        >
+                            Pedidos
+                        </li>
                         <li
                             onClick={e => onClickMenuOpHandler(e, '')}
                         >

@@ -29,3 +29,7 @@ export function postCarrinho(idCliente) {
         idCliente,
     });
 }
+
+export function getPedidos(idCliente) {
+    return awms.get(`/api/pedidos/${idCliente}`);
+}

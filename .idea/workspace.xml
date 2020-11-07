@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0a52b2e-1092-4f62-9d52-b145323b1551" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Carrinho/carrinhoUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Dialog/PedidoDialog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Dialog/dialog.styles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pedidos/PedidoAcordiun/PedidoAcordiun.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pedidos/PedidoAcordiun/pedidoAcordion.makeStyles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pedidos/PedidoAcordiun/pedidoAcordion.styles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Dialog/AvisoPedidoDialog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Dialog/ListaPedidoDialog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Carrinho/Carrinho.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carrinho/Carrinho.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carrinho/carrinho.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carrinho/carrinho.styles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/home.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/home.styles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Produtos/Card/CardProdutos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Produtos/Card/CardProdutos.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Produtos/Card/cardProdutos.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Produtos/Card/cardProdutos.styles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Dialog/PedidoDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Dialog/PedidoDialog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Dialog/dialog.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Dialog/dialog.styles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/home/home.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/home/home.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/home/home.constants.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/home/home.constants.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/home/home.saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/home/home.saga.js" afterDir="false" />
@@ -50,8 +53,12 @@
     <property name="ts.external.directory.path" value="C:\Users\kljoa\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\193.6494.34\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\aps2020\src\components\Pedidos" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\aps2020\src\components\UI" />
+      <recent name="C:\aps2020\src\components\UI\Dialog" />
       <recent name="C:\aps2020\src" />
     </key>
   </component>
@@ -82,7 +89,7 @@
       <updated>1603903164462</updated>
       <workItem from="1603903168223" duration="38598000" />
       <workItem from="1604529904315" duration="8447000" />
-      <workItem from="1604771007804" duration="11543000" />
+      <workItem from="1604771007804" duration="17444000" />
     </task>
     <task id="LOCAL-00001" summary="ferreira gay">
       <created>1604281671328</created>
@@ -112,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604537752103</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ajuste das grids&#10;Desenvolvimento do PedidoDialog.jsx">
+      <created>1604784340592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604784340592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,41 +138,42 @@
     <MESSAGE value="ferreira gay" />
     <MESSAGE value="Chamadas dos produtos.&#10;Chamada das Categorias.&#10;Criando Categoria Dinamicamente.&#10;Modelagem dos cards." />
     <MESSAGE value="Criando Carrinho.jsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando Carrinho.jsx" />
+    <MESSAGE value="Ajuste das grids&#10;Desenvolvimento do PedidoDialog.jsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste das grids&#10;Desenvolvimento do PedidoDialog.jsx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603926481372">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603926481372" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604537750250">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604784338745">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604537750250" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604784338745" />
     <state x="551" y="258" key="Github.ShareDialog" timestamp="1604281777958">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="551" y="258" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1604281777958" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1604783257182">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604789229549">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604783257182" />
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604537752973">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604789229549" />
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1604784341730">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604537752973" />
-    <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1604783937972">
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604784341730" />
+    <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1604790278394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="369" y="80" width="627" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604783937972" />
+    <state x="369" y="80" width="627" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604790278394" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1604776530414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604776530414" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604783623829">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604788843364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604783623829" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604788843364" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,13 +16,12 @@ function CardProdutos({idProduto, descricaoHover = '', descricao = '', preco = 0
     const [img64, setImg64] = useState('');
 
     useEffect(() => {
-        if (img.startsWith('data')) {
+        if (img && img.startsWith('data')) {
             setImg64(img);
         } else {
             setImg64(`data:image/jpeg;base64,${img}`);
         }
     }, [setImg64, img]);
-
 
 
     // Responsavel por incrementar a quantidade do produto.
@@ -48,9 +47,11 @@ function CardProdutos({idProduto, descricaoHover = '', descricao = '', preco = 0
 
     // Responsavel por colocar os itens no carrinho.
     const onAddCarrinhoHandler = useCallback(() => {
-        dispatch(addItemCarrinhoAction(idProduto, qtdProduto));
-        setPrecoProduto(preco);
-        setQtdProduto(0);
+        if (qtdProduto > 0) {
+            dispatch(addItemCarrinhoAction(idProduto, qtdProduto));
+            setPrecoProduto(preco);
+            setQtdProduto(0);
+        }
     }, [dispatch, idProduto, qtdProduto, setQtdProduto, preco]);
 
     return (
