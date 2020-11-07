@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
@@ -13,13 +13,28 @@ function CardProdutos({idProduto, descricaoHover = '', descricao = '', preco = 0
 
     const [precoProduto, setPrecoProduto] = useState(preco);
     const [qtdProduto, setQtdProduto] = useState(0);
+    const [img64, setImg64] = useState('');
 
+    useEffect(() => {
+        if (img.startsWith('data')) {
+            setImg64(img);
+        } else {
+            setImg64(`data:image/jpeg;base64,${img}`);
+        }
+    }, [setImg64, img]);
+
+
+
+    // Responsavel por incrementar a quantidade do produto.
     const onClickAddMoreItem = useCallback(() => {
-        const newPreco = precoProduto + preco;
-        setPrecoProduto(newPreco);
-        setQtdProduto(qtdProduto + 1)
+        setQtdProduto(qtdProduto + 1);
+        if (qtdProduto >= 1) {
+            const newPreco = precoProduto + preco;
+            setPrecoProduto(newPreco);
+        }
     }, [precoProduto, setPrecoProduto, preco, qtdProduto]);
 
+    // Responsavel por decrementar a quantidade do produto.
     const onClickRemoveItem = useCallback(() => {
         const newPreco = precoProduto - preco;
         if (newPreco < preco) {
@@ -31,9 +46,12 @@ function CardProdutos({idProduto, descricaoHover = '', descricao = '', preco = 0
         }
     }, [precoProduto, setPrecoProduto, preco, qtdProduto]);
 
+    // Responsavel por colocar os itens no carrinho.
     const onAddCarrinhoHandler = useCallback(() => {
-        dispatch(addItemCarrinhoAction(idProduto,qtdProduto))
-    }, [dispatch, idProduto, qtdProduto]);
+        dispatch(addItemCarrinhoAction(idProduto, qtdProduto));
+        setPrecoProduto(preco);
+        setQtdProduto(0);
+    }, [dispatch, idProduto, qtdProduto, setQtdProduto, preco]);
 
     return (
         <Card className={styles.root}>
@@ -41,7 +59,7 @@ function CardProdutos({idProduto, descricaoHover = '', descricao = '', preco = 0
                 <CardMedia
                     className={styles.media}
                     title={descricaoHover}
-                    image={img}
+                    image={img64}
                 />
                 <div className={styles.div__cardContent}>
                     <Typography variant="h5" component="h2">

@@ -1,45 +1,72 @@
-import React from "react";
+import React, {useCallback, useState} from "react";
 import useStyles from './carrinho.styles';
 import clsx from "clsx";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import DeleteIcon from '@material-ui/icons/Delete';
+import {deleteItemCarrinhoAction, postCarrinhoAction} from "../../store/home/home.saga";
+import PedidoDialog from "../UI/Dialog/PedidoDialog";
+import {getItemValue, getTotalCarrinho} from "./carrinhoUtils";
+import {setHomeValuesAction} from "../../store/home/home.store";
 
 function Carrinho({open, loading, onMouseLeave}) {
 
     const styles = useStyles();
+    const dispatch = useDispatch();
 
     const carrinho = useSelector(states => states.homeStore.carrinho);
+    const openGerarPedidoDialog = useSelector(states => states.homeStore.openGerarPedidoDialog);
+    const openAvisoPedidoDialog = useSelector(states => states.homeStore.openAvisoPedidoDialog);
+
+    const [carrinhoPedido, setCarrinhoPedido] = useState([]);
 
     const carrinhoStyle = clsx({
         [styles.div__root__carrinho]: true,
         [styles.div__carrinho__active]: open && !loading,
     });
 
-    const getItemValue = (item) => `${item.quantidade}x ${item.produto.descricao}`;
+    const onDeleteItemCarrinho = useCallback((e, idCarrinho) => {
+        dispatch(deleteItemCarrinhoAction(idCarrinho));
+    }, [dispatch]);
 
-    function getTotalCarrinho() {
-        let totalCarrinho = 0;
+    const onClickGerarPedidoHandler = useCallback(() => {
+        dispatch(setHomeValuesAction('openGerarPedidoDialog', true));
+        setCarrinhoPedido(carrinho);
+    }, [dispatch, setCarrinhoPedido, carrinho]);
 
-        if (carrinho !== undefined) {
-            carrinho.forEach(item => {
-                totalCarrinho = totalCarrinho + +item.produto.preco * item.quantidade;
-            });
-        }
-        return totalCarrinho;
-    }
+    const onClosePedidoHandler = useCallback(() => {
+        dispatch(setHomeValuesAction('openGerarPedidoDialog', false));
+        setCarrinhoPedido([]);
+    }, [dispatch, setCarrinhoPedido]);
+
+    const onGerarPedidoHandler = useCallback(() => {
+        dispatch(postCarrinhoAction());
+    }, [dispatch]);
 
     return (
         <>
+            <PedidoDialog
+                open={openGerarPedidoDialog}
+                onGerarPedidoHandler={onGerarPedidoHandler}
+                onCloseHandler={onClosePedidoHandler}
+                carrinho={carrinhoPedido}
+            />
             {carrinho !== undefined ?
                 (
                     <div className={carrinhoStyle} onMouseLeave={onMouseLeave}>
                         {carrinho.map(item => (
-                            <>
+                            <div key={item.idCarrinho} className={styles.div__item__root}>
                                 <span className={styles.span__item}>{getItemValue(item)}</span>
+                                <div className={styles.div__deleteIcon}>
+                                    <DeleteIcon onClick={e => onDeleteItemCarrinho(e, item.idCarrinho)}/>
+                                </div>
                                 <br/>
-                            </>
+                            </div>
                         ))}
                         <div className={styles.div__totalCarrinho}>
-                            Total: {getTotalCarrinho()}
+                            Total: {getTotalCarrinho(carrinho)}
+                        </div>
+                        <div className={styles.div__gerarPedidoBtn}>
+                            <button type="button" onClick={onClickGerarPedidoHandler}>Gerar Pedido</button>
                         </div>
                     </div>
                 ) : null}

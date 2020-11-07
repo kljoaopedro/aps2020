@@ -3,7 +3,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 export default makeStyles({
     root: {
         maxWidth: 345,
-        marginRight: '40px',
         borderRadius: 0,
         opacity: 1,
         transition: 'opacity 0.2s ease-in-out',
@@ -13,7 +12,7 @@ export default makeStyles({
         },
     },
     media: {
-        height: 140,
+        height: 200,
     },
     div__button: {
         backgroundColor: 'black',
@@ -33,6 +32,7 @@ export default makeStyles({
         '& h2': {
             paddingTop: '4px',
             color: 'white',
+            textAlign: 'center',
         },
         '& p': {
             color: 'white',

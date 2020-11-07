@@ -3,6 +3,8 @@ import {SET_HOME_VALUES} from "./home.constants";
 function buildInitialStates() {
     return {
         homeLoading: false,
+        openGerarPedidoDialog: false,
+        openAvisoPedidoDialog: false,
         produtos: [],
         categorias: [],
         carrinho: [],

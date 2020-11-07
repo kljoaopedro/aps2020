@@ -37,8 +37,10 @@ export default makeStyles({
         height: '100%',
     },
     div__produtos: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+        gridAutoRows: 'auto',
+        gridGap: '20px',
+        margin: '0px 14px 0px 14px',
     },
 })
