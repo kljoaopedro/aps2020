@@ -7,14 +7,16 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import Button from "@material-ui/core/Button";
 import {getItemValue} from "../../Carrinho/carrinhoUtils";
+import {formatMoney} from "../../../utils";
 
 
 function PedidoDialog({
-                      open = false,
-                      onCloseHandler,
-                      carrinho,
-                      onGerarPedidoHandler,
-                  }) {
+                          open = false,
+                          onCloseHandler,
+                          carrinho,
+                          valorTotal = 0,
+                          onGerarPedidoHandler,
+                      }) {
     const styles = useStyles();
 
     return (
@@ -26,7 +28,8 @@ function PedidoDialog({
                 aria-describedby="alert-dialog-description"
                 className={styles.dialog__root}
             >
-                <DialogTitle style={{color: 'white'}} id="alert-dialog-title">{"Por favor confirme seu pedido"}</DialogTitle>
+                <DialogTitle style={{color: 'white'}}
+                             id="alert-dialog-title">{"Por favor confirme seu pedido"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description" style={{color: 'white'}}>
                         {carrinho ? carrinho.map(item => (
@@ -36,6 +39,9 @@ function PedidoDialog({
                         )) : (
                             <div>Voce deve estar logado :(</div>
                         )}
+                        <div>
+                            <strong>Valor total: {formatMoney(valorTotal)}</strong>
+                        </div>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
