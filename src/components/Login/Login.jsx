@@ -1,6 +1,5 @@
 import React, {useCallback} from "react";
 import useStyles from './login.styles';
-import {useAuthDispatch, useAuthSelector} from "../../store/auth/AuthProvider";
 import {logarAction} from "../../store/auth/auth.saga";
 import UILoading from "../UI/Loading/UILoading";
 import TextField from "@material-ui/core/TextField";
